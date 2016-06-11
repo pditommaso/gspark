@@ -33,13 +33,13 @@ public final class GroovyWordCount {
   public static void main(String[] args) throws Exception {
 
     if (args.length < 1) {
-      println("Usage: JavaWordCount <file>")
+      println("Usage: GroovyWordCount <file>")
       System.exit(1)
     }
 
-    def sparkConf = new SparkConf().setAppName("JavaWordCount");
-    def ctx = new JavaSparkContext(sparkConf);
-    def lines = ctx.textFile(args[0], 1);
+    def sparkConf = new SparkConf().setAppName("GroovyWordCount")
+    def ctx = new JavaSparkContext(sparkConf)
+    def lines = ctx.textFile(args[0], 1)
 
     def words = lines.flatMap( { Arrays.asList(SPACE.split(it)) } as FlatMapFunction<String, String> )
 

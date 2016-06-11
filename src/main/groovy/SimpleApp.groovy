@@ -25,7 +25,7 @@ public class SimpleApp {
     public static void main(String[] args) {
 
         def logFile = "${System.getenv('SPARK_HOME')}/README.md" // Should be some file on your system
-        def conf = new SparkConf().setAppName("Simple Application")
+        def conf = new SparkConf().setAppName("Groovy Simple Application")
         def sc = new JavaSparkContext(conf)
         def logData = sc.textFile(logFile).cache()
 
