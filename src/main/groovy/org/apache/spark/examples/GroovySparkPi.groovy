@@ -52,7 +52,7 @@ public final class GroovySparkPi {
             .map(mapper as Function<Integer, Integer>)
             .reduce({int a, int b -> a+b} as Function2<Integer, Integer, Integer>)
 
-    println("Pi is roughly " + 4.0 * count / n)
+    println("Pi is roughly ${4.0 * count / n}")
 
     jsc.stop()
   }
