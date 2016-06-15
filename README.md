@@ -62,6 +62,6 @@ Compile the project:
 Launch the Ignite example: 
      
     $SPARK_HOME/bin/spark-submit \
-        --class test.JavaLaunchIgnite \
+        --class org.apache.ignite.examples.GroovyIgniteSimpleApp \
         --master spark://$HOSTNAME:7077 \
         build/libs/gspark-1.0-all.jar 

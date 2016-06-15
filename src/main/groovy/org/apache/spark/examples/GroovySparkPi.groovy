@@ -29,6 +29,14 @@ import org.apache.spark.api.java.function.Function2
 @CompileStatic
 public final class GroovySparkPi {
 
+  /**
+   * A Groovy implementation of the Spark PI example
+   * Note: the class doesn't require to implements `Serializable` because
+   * it's implemented though a static method
+   *
+   * @param args
+   * @throws Exception
+   */
   public static void main(String[] args) throws Exception {
     def sparkConf = new SparkConf().setAppName("GroovySparkPi")
     def jsc = new JavaSparkContext(sparkConf)

@@ -8,8 +8,8 @@ import org.apache.spark.api.java.function.Function2
 
 @BaseScript SerializableScript baseScript
 
-
 /**
+ * A Groovy script implementing the Spark PI example
  *
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */

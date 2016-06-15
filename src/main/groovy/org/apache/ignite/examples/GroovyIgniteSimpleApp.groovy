@@ -10,6 +10,7 @@ import org.apache.ignite.spark.JavaIgniteContext
 import org.apache.spark.SparkConf
 import org.apache.spark.api.java.JavaSparkContext
 /**
+ * A basic Groovy application deploying (basic) Ignite workload over a Spark cluster
  *
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */
