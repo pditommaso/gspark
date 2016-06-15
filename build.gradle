@@ -31,7 +31,7 @@ configurations {
 
 dependencies {
     provided 'org.apache.spark:spark-core_2.10:1.6.1'
-    provided 'org.codehaus.groovy:groovy-all:2.1.6'
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
     compile ('org.apache.ignite:ignite-core:1.6.0')
     compile ('org.apache.ignite:ignite-log4j:1.6.0')
     compile ('org.apache.ignite:ignite-spark:1.6.0')  {
@@ -49,6 +49,9 @@ sourceSets.main.groovy.srcDirs = ['src/main/java', 'src/main/groovy']
 
 idea {
     module {
+        downloadJavadoc = true
+        downloadSources = true
         scopes.PROVIDED.plus += [configurations.provided]
     }
+
 }

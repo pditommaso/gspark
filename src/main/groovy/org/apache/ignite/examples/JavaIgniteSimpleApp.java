@@ -1,4 +1,4 @@
-package test;
+package org.apache.ignite.examples;
 
 import org.apache.ignite.Ignite;
 import org.apache.ignite.configuration.IgniteConfiguration;
@@ -11,7 +11,7 @@ import org.apache.spark.api.java.JavaSparkContext;
  *
  * @author Paolo Di Tommaso <paolo.ditommaso@gmail.com>
  */
-public class JavaLaunchIgnite {
+public class JavaIgniteSimpleApp {
 
     static public void main(String... args) {
 
