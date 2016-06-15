@@ -1,6 +1,17 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.3'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'groovy'
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'idea'
 
 group = 'edu.berkeley'
 version = '1.0'
@@ -14,10 +25,30 @@ repositories {
      maven { url "http://repo.maven.apache.org/maven2" }
 }
 
-dependencies {
-    compile group: 'org.apache.spark', name: 'spark-core_2.10', version:'1.6.1'
-    compile "org.codehaus.groovy:groovy-all:2.1.6"
+configurations {
+    provided
 }
 
+dependencies {
+    provided 'org.apache.spark:spark-core_2.10:1.6.1'
+    provided 'org.codehaus.groovy:groovy-all:2.1.6'
+    compile ('org.apache.ignite:ignite-core:1.6.0')
+    compile ('org.apache.ignite:ignite-log4j:1.6.0')
+    compile ('org.apache.ignite:ignite-spark:1.6.0')  {
+        exclude group: 'org.apache.spark'
+        exclude group: 'org.scala-lang', module: 'scala-library'
+        exclude group: 'org.apache.ignite', module: 'ignite-spring'
+        exclude group: 'org.apache.ignite', module: 'ignite-indexing'
+    }
+}
+
+sourceSets.main.compileClasspath += configurations.provided
 sourceSets.main.java.srcDirs = []
 sourceSets.main.groovy.srcDirs = ['src/main/java', 'src/main/groovy']
+
+
+idea {
+    module {
+        scopes.PROVIDED.plus += [configurations.provided]
+    }
+}

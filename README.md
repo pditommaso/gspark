@@ -23,7 +23,8 @@ Launch the GroovyWordCount:
 
     $SPARK_HOME/bin/spark-submit \
       --class "org.apache.spark.examples.GroovyWordCount" \
-      build/libs/gspark-1.0.jar README.md
+      build/libs/gspark-1.0.jar 
+      README.md
     
    
 ## Deploy jobs on a local cluster 
@@ -51,3 +52,16 @@ Stop master and slave instances:
      
                
     
+## Deploy Ignite application over a Spark cluster
+    
+   
+Compile the project: 
+
+    ./gradlew shadowJar
+     
+Launch the Ignite example: 
+     
+    $SPARK_HOME/bin/spark-submit \
+        --class test.JavaLaunchIgnite \
+        --master spark://$HOSTNAME:7077 \
+        build/libs/gspark-1.0-all.jar 
