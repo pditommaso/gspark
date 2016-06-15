@@ -34,7 +34,7 @@ Launch the Spark master:
     
 Launch a Spark worker: 
 
-    $SPARK_HOME/sbin/start-slave.sh spark://$HOSTNAME:7077 -c 1 -m 512M
+    $SPARK_HOME/sbin/start-slave.sh spark://$HOSTNAME:7077 -c 1 -m 1G
     
 Run the Groovy PI example: 
 
