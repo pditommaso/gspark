@@ -23,7 +23,7 @@ Launch the GroovyWordCount:
 
     $SPARK_HOME/bin/spark-submit \
       --class "org.apache.spark.examples.GroovyWordCount" \
-      build/libs/spark-groovy-1.0.jar README.md
+      build/libs/gspark-1.0.jar README.md
     
    
 ## Deploy jobs on a local cluster 
@@ -41,7 +41,7 @@ Run the Groovy PI example:
     $SPARK_HOME/bin/spark-submit \
       --class org.apache.spark.examples.GroovySparkPi \
       --master spark://$HOSTNAME:7077 \
-      build/libs/spark-groovy-1.0.jar       
+      build/libs/gspark-1.0.jar       
    
 Check the Spark daskbord opening the browser at the address [http://localhost:8080/](http://localhost:8080/)     
       
