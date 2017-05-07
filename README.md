@@ -6,7 +6,7 @@ Sandbox testing Groovy based Spark applications
 ## Quickstart 
 
 Download and unzip [Spark](http://spark.apache.org/downloads.html) in a directory of your choice, 
-then set the `SPARK_HOME` directory.
+then set the `SPARK_HOME` directory (tested with Spark 1.6.3).
 
 Clone this repo: 
 
@@ -16,14 +16,14 @@ Clone this repo:
     
 Compile the examples:
 
-    ./gradlew jar 
+    ./gradlew shadowJar
     
     
 Launch the GroovyWordCount: 
 
     $SPARK_HOME/bin/spark-submit \
       --class "org.apache.spark.examples.GroovyWordCount" \
-      build/libs/gspark-1.0.jar 
+      build/libs/gspark-1.0-all.jar \
       README.md
     
    
@@ -42,7 +42,7 @@ Run the Groovy PI example:
     $SPARK_HOME/bin/spark-submit \
       --class org.apache.spark.examples.GroovySparkPi \
       --master spark://$HOSTNAME:7077 \
-      build/libs/gspark-1.0.jar       
+      build/libs/gspark-1.0-all.jar       
    
 Check the Spark daskbord opening the browser at the address [http://localhost:8080/](http://localhost:8080/)     
       
@@ -53,11 +53,7 @@ Stop master and slave instances:
                
     
 ## Deploy Ignite application over a Spark cluster
-    
-   
-Compile the project: 
 
-    ./gradlew shadowJar
      
 Launch the Ignite example: 
      
